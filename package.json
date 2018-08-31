@@ -1,0 +1,9 @@
+{
+    "name": "timeAddsUp",
+    "version": "0.1.0",
+    "description": "A video installation by Colin Clark.",
+    "author": "Colin Clark",
+    "dependencies": {
+        "aconite": "0.8.0"
+    }
+}

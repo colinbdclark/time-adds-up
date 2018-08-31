@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Time Adds Up: Darcie</title>
+
+        <link rel="stylesheet" href="../node_modules/aconite/src/ui/css/stage.css" type="text/css" />
+        <link rel="stylesheet" href="../node_modules/aconite/src/ui/css/playButton.css" type="text/css" />
+
+        <script src="../node_modules/aconite/dist/aconite-all.js"></script>
+
+        <script src="../shared/js/layer.js"></script>
+        <script src="../shared/js/compositor.js"></script>
+        <script src="src/js/darcie.js"></script>
+        <script src="src/js/darcie-glrenderer.js"></script>
+
+    </head>
+    <body>
+        <div class="aconite-video-container">
+            <img class="aconite-animator-play" src="../node_modules/aconite/src/ui/images/play_overlay.png" />
+            <canvas class="aconite-animator-canvas" width="1080" height="720"></canvas>
+        </div>
+        <script>
+            window.darcie = timeAddsUp.darcie.compositor(".aconite-video-container");
+        </script>
+    </body>
+</html>
