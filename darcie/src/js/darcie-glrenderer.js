@@ -37,7 +37,33 @@ fluid.defaults("timeAddsUp.darcie.glRenderer", {
         sixSampler: {
             type: "1i",
             values: 5
+        },
+
+        sevenSampler: {
+            type: "1i",
+            values: 6
+        },
+
+        eightSampler: {
+            type: "1i",
+            values: 7
+        },
+
+        nineSampler: {
+            type: "1i",
+            values: 8
+        },
+
+        tenSampler: {
+            type: "1i",
+            values: 9
+        },
+
+        elevenSampler: {
+            type: "1i",
+            values: 10
         }
+
         // Uniforms for processing variables.
     }
 });

@@ -32,6 +32,26 @@ fluid.defaults("timeAddsUp.norah.glRenderer", {
         fiveSampler: {
             type: "1i",
             values: 4
+        },
+
+        sixSampler: {
+            type: "1i",
+            values: 5
+        },
+
+        sevenSampler: {
+            type: "1i",
+            values: 6
+        },
+
+        eightSampler: {
+            type: "1i",
+            values: 7
+        },
+
+        nineSampler: {
+            type: "1i",
+            values: 8
         }
 
         // Uniforms for processing variables.

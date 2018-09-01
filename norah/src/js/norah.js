@@ -20,16 +20,25 @@ fluid.defaults("timeAddsUp.norah.compositor", {
         oneLayer: {
             type: "timeAddsUp.layer",
             options: {
-                url: "{compositor}.options.layerURLs.0",
-                textureNum: 0
+                url: "{compositor}.options.layerURLs.4",
+                textureNum: 0,
+                model: {
+                    frameRate: 24,
+                    outTime: 10
+                }
             }
         },
 
         twoLayer: {
             type: "timeAddsUp.layer",
             options: {
-                url: "{compositor}.options.layerURLs.1",
-                textureNum: 1
+                url: "{compositor}.options.layerURLs.2",
+                textureNum: 1,
+                model: {
+                    frameRate: 24,
+                    inTime: 38,
+                    outTime: 60
+                }
             }
         },
 
@@ -37,23 +46,88 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             type: "timeAddsUp.layer",
             options: {
                 url: "{compositor}.options.layerURLs.2",
-                textureNum: 2
+                textureNum: 2,
+                model: {
+                    frameRate: 24,
+                    inTime: 10,
+                    outTime: 60
+                }
             }
         },
 
         fourLayer: {
             type: "timeAddsUp.layer",
             options: {
-                url: "{compositor}.options.layerURLs.3",
-                textureNum: 3
+                url: "{compositor}.options.layerURLs.2",
+                textureNum: 3,
+                model: {
+                    frameRate: 24,
+                    inTime: 20,
+                    outTime: 60
+                }
             }
         },
 
         fiveLayer: {
             type: "timeAddsUp.layer",
             options: {
+                url: "{compositor}.options.layerURLs.2",
+                textureNum: 4,
+                model: {
+                    frameRate: 24,
+                    inTime: 30,
+                    outTime: 60
+                }
+            }
+        },
+
+        sixLayer: {
+            type: "timeAddsUp.layer",
+            options: {
+                url: "{compositor}.options.layerURLs.1",
+                textureNum: 5,
+                model: {
+                    frameRate: 24,
+                    outTime: 18
+                }
+            }
+        },
+
+        sevenLayer: {
+            type: "timeAddsUp.layer",
+            options: {
+                url: "{compositor}.options.layerURLs.3",
+                textureNum: 6,
+                model: {
+                    frameRate: 24,
+                    outTime: 14
+                }
+            }
+        },
+
+        eightLayer: {
+            type: "timeAddsUp.layer",
+            options: {
+                url: "{compositor}.options.layerURLs.2",
+                textureNum: 7,
+                model: {
+                    frameRate: 24,
+                    inTime: 47,
+                    outTime: 60
+                }
+            }
+        },
+
+        nineLayer: {
+            type: "timeAddsUp.layer",
+            options: {
                 url: "{compositor}.options.layerURLs.4",
-                textureNum: 4
+                textureNum: 8,
+                model: {
+                    frameRate: 24,
+                    inTime: 2,
+                    outTime: 10
+                }
             }
         }
     }

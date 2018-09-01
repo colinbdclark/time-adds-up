@@ -12,7 +12,8 @@ fluid.defaults("timeAddsUp.layer", {
 
     model: {
         url: "{that}.options.url",
-        loop: true
+        loop: true,
+        frameRate: 24
     }
 });
 
