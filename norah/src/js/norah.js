@@ -10,28 +10,14 @@ fluid.defaults("timeAddsUp.norah.compositor", {
     ],
 
     uniformModelMap: {
-        oneOpacity: "oneOpacity",
-        twoOpacity: "twoOpacity",
-        threeOpacity: "threeOpacity",
-        fourOpacity: "fourOpacity",
-        fiveOpacity: "fiveOpacity",
-        sixOpacity: "sixOpacity",
-        sevenOpacity: "sevenOpacity",
-        eightOpacity: "eightOpacity",
-        nineOpacity: "nineOpacity"
+        opacities: "opacities"
     },
 
     // TODO: ever heard of this thing called an array?
     model: {
-        oneOpacity: "{glRenderer}.options.uniforms.oneOpacity.values",
-        twoOpacity: "{glRenderer}.options.uniforms.twoOpacity.values",
-        threeOpacity: "{glRenderer}.options.uniforms.threeOpacity.values",
-        fourOpacity: "{glRenderer}.options.uniforms.fourOpacity.values",
-        fiveOpacity: "{glRenderer}.options.uniforms.fiveOpacity.values",
-        sixOpacity: "{glRenderer}.options.uniforms.sixOpacity.values",
-        sevenOpacity: "{glRenderer}.options.uniforms.sevenOpacity.values",
-        eightOpacity: "{glRenderer}.options.uniforms.eightOpacity.values",
-        nineOpacity: "{glRenderer}.options.uniforms.nineOpacity.values"
+        opacities: [
+            "{glRenderer}.options.uniforms.opacities.values"
+        ]
     },
 
     components: {
@@ -47,7 +33,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.4",
                 textureNum: 0,
-                targetModelPath: "oneOpacity",
+                targetModelPath: "opacities.0.0",
                 model: {
                     frameRate: 24,
                     outTime: 10
@@ -60,7 +46,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.2",
                 textureNum: 1,
-                targetModelPath: "twoOpacity",
+                targetModelPath: "opacities.0.1",
                 model: {
                     frameRate: 24,
                     inTime: 38,
@@ -74,7 +60,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.2",
                 textureNum: 2,
-                targetModelPath: "threeOpacity",
+                targetModelPath: "opacities.0.2",
                 model: {
                     frameRate: 24,
                     inTime: 10,
@@ -88,7 +74,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.2",
                 textureNum: 3,
-                targetModelPath: "fourOpacity",
+                targetModelPath: "opacities.0.3",
                 model: {
                     frameRate: 24,
                     inTime: 20,
@@ -102,7 +88,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.2",
                 textureNum: 4,
-                targetModelPath: "fiveOpacity",
+                targetModelPath: "opacities.0.4",
                 model: {
                     frameRate: 24,
                     inTime: 30,
@@ -116,7 +102,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.1",
                 textureNum: 5,
-                targetModelPath: "sixOpacity",
+                targetModelPath: "opacities.0.5",
                 model: {
                     frameRate: 24,
                     outTime: 18
@@ -129,7 +115,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.3",
                 textureNum: 6,
-                targetModelPath: "sevenOpacity",
+                targetModelPath: "opacities.0.6",
                 model: {
                     frameRate: 24,
                     outTime: 14
@@ -142,7 +128,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.2",
                 textureNum: 7,
-                targetModelPath: "eightOpacity",
+                targetModelPath: "opacities.0.7",
                 model: {
                     frameRate: 24,
                     inTime: 47,
@@ -156,7 +142,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
             options: {
                 url: "{compositor}.options.layerURLs.4",
                 textureNum: 8,
-                targetModelPath: "nineOpacity",
+                targetModelPath: "opacities.0.7",
                 model: {
                     frameRate: 24,
                     inTime: 2,

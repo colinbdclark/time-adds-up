@@ -1,60 +1,31 @@
 precision highp float;
 
-uniform sampler2D oneSampler;
-uniform sampler2D twoSampler;
-uniform sampler2D threeSampler;
-uniform sampler2D fourSampler;
-uniform sampler2D fiveSampler;
-uniform sampler2D sixSampler;
-uniform sampler2D sevenSampler;
-uniform sampler2D eightSampler;
-uniform sampler2D nineSampler;
-
-uniform float oneOpacity;
-uniform float twoOpacity;
-uniform float threeOpacity;
-uniform float fourOpacity;
-uniform float fiveOpacity;
-uniform float sixOpacity;
-uniform float sevenOpacity;
-uniform float eightOpacity;
-uniform float nineOpacity;
-
+const int numLayers = 9;
+uniform sampler2D samplers[numLayers];
+uniform float opacities[numLayers];
 uniform vec2 textureSize;
+
+vec4 adjustBrightnessContrast(float gamma, float brightness, float contrast, vec4 frag) {
+    // From Klaus:
+    // https://krpano.com/forum/wbb/index.php?page=Thread&threadID=13863
+    vec4 result = vec4(0.0, 0.0, 0.0, 1.0);
+    result.r = (pow(frag.r, gamma) - 0.5) * contrast + brightness + 0.5;
+    result.g = (pow(frag.g, gamma) - 0.5) * contrast + brightness + 0.5;
+    result.b = (pow(frag.b, gamma) - 0.5) * contrast + brightness + 0.5;
+
+    return result;
+}
 
 void main(void) {
     vec2 coords = vec2(gl_FragCoord.x / textureSize.x, gl_FragCoord.y / textureSize.y);
-    vec4 oneFrag = texture2D(oneSampler, coords);
-    vec4 twoFrag = texture2D(twoSampler, coords);
-    vec4 threeFrag = texture2D(threeSampler, coords);
-    vec4 fourFrag = texture2D(fourSampler, coords);
-    vec4 fiveFrag = texture2D(fiveSampler, coords);
-    vec4 sixFrag = texture2D(sixSampler, coords);
-    vec4 sevenFrag = texture2D(sevenSampler, coords);
-    vec4 eightFrag = texture2D(eightSampler, coords);
-    vec4 nineFrag = texture2D(nineSampler, coords);
+    vec4 sum = vec4(0.0, 0.0, 0.0, 1.0);
 
-    // linear. old scaling was * 0.15.
-    vec4 color = (oneFrag * oneOpacity) +
-        (twoFrag * twoOpacity) +
-        (threeFrag * threeOpacity) +
-        (fourFrag * fourOpacity) +
-        (fiveFrag * fiveOpacity) +
-        (sixFrag * sixOpacity) +
-        (sevenFrag * sevenOpacity) +
-        (eightFrag * eightOpacity) +
-        (nineFrag * nineOpacity);
+    for (int i = 0; i < numLayers; i++) {
+        vec4 frag = texture2D(samplers[i], coords);
+        sum.rgb = sum.rgb + (frag.rgb * opacities[i]);
+    }
 
-    // From Klaus:
-    // https://krpano.com/forum/wbb/index.php?page=Thread&threadID=13863
-    float contrast = 2.3;
-    float brightness = 0.7;
-    float gamma = 2.4; // Should this be 2.2? (https://en.wikipedia.org/wiki/Rec._709#Transfer_characteristics)
-
-    vec4 contrasty = vec4(0.0, 0.0, 0.0, 1.0);
-    contrasty.r = (pow(color.r, gamma) - 0.5) * contrast + brightness + 0.5;
-    contrasty.g = (pow(color.g, gamma) - 0.5) * contrast + brightness + 0.5;
-    contrasty.b = (pow(color.b, gamma) - 0.5) * contrast + brightness + 0.5;
+    vec4 contrasty = adjustBrightnessContrast(2.0, 0.7, 2.4, sum);
 
     gl_FragColor = contrasty;
 }

@@ -7,63 +7,11 @@ fluid.defaults("timeAddsUp.darcie.glRenderer", {
     },
 
     uniforms: {
-        // Samplers for each layer.
-        // TODO: These should be generated programmatically.
-        oneSampler: {
-            type: "1i",
-            values: 0
-        },
-
-        twoSampler: {
-            type: "1i",
-            values: 1
-        },
-
-        threeSampler: {
-            type: "1i",
-            values: 2
-        },
-
-        fourSampler: {
-            type: "1i",
-            values: 3
-        },
-
-        fiveSampler: {
-            type: "1i",
-            values: 4
-        },
-
-        sixSampler: {
-            type: "1i",
-            values: 5
-        },
-
-        sevenSampler: {
-            type: "1i",
-            values: 6
-        },
-
-        eightSampler: {
-            type: "1i",
-            values: 7
-        },
-
-        nineSampler: {
-            type: "1i",
-            values: 8
-        },
-
-        tenSampler: {
-            type: "1i",
-            values: 9
-        },
-
-        elevenSampler: {
-            type: "1i",
-            values: 10
+        samplers: {
+            type: "1iv",
+            values: [
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            ]
         }
-
-        // Uniforms for processing variables.
     }
 });
