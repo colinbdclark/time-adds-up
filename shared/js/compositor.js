@@ -7,6 +7,14 @@ fluid.defaults("timeAddsUp.compositor", {
 
     layerURLs: [],
 
+    uniformModelMap: {},
+
+    components: {
+        enviro: {
+            type: "flock.silentEnviro"
+        }
+    },
+
     invokers: {
         requestFullScreenStage: {
             funcName: "aconite.ui.playButtonOverlay.fullScreen.requestFullScreen",

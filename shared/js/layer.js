@@ -3,6 +3,8 @@ fluid.defaults("timeAddsUp.layer", {
 
     textureNum: 0,
 
+    targetModelPath: "opacity",
+
     bindToTextureUnit: {
         expander: {
             funcName: "timeAddsUp.layer.makeTextureUnitString",
@@ -14,6 +16,16 @@ fluid.defaults("timeAddsUp.layer", {
         url: "{that}.options.url",
         loop: true,
         frameRate: 24
+    },
+
+    components: {
+        speedModulator: {
+            type: "timeAddsUp.speedModulator"
+        },
+
+        opacityModulator: {
+            type: "timeAddsUp.opacityModulator"
+        }
     }
 });
 

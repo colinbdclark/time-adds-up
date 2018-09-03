@@ -10,6 +10,16 @@ uniform sampler2D sevenSampler;
 uniform sampler2D eightSampler;
 uniform sampler2D nineSampler;
 
+uniform float oneOpacity;
+uniform float twoOpacity;
+uniform float threeOpacity;
+uniform float fourOpacity;
+uniform float fiveOpacity;
+uniform float sixOpacity;
+uniform float sevenOpacity;
+uniform float eightOpacity;
+uniform float nineOpacity;
+
 uniform vec2 textureSize;
 
 void main(void) {
@@ -25,9 +35,15 @@ void main(void) {
     vec4 nineFrag = texture2D(nineSampler, coords);
 
     // linear. old scaling was * 0.15.
-    vec4 color = (oneFrag + twoFrag + threeFrag +
-        fourFrag + fiveFrag + sixFrag + sevenFrag +
-        eightFrag + nineFrag) / 9.0;
+    vec4 color = (oneFrag * oneOpacity) +
+        (twoFrag * twoOpacity) +
+        (threeFrag * threeOpacity) +
+        (fourFrag * fourOpacity) +
+        (fiveFrag * fiveOpacity) +
+        (sixFrag * sixOpacity) +
+        (sevenFrag * sevenOpacity) +
+        (eightFrag * eightOpacity) +
+        (nineFrag * nineOpacity);
 
     // From Klaus:
     // https://krpano.com/forum/wbb/index.php?page=Thread&threadID=13863

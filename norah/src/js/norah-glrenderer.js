@@ -52,8 +52,52 @@ fluid.defaults("timeAddsUp.norah.glRenderer", {
         nineSampler: {
             type: "1i",
             values: 8
-        }
+        },
 
-        // Uniforms for processing variables.
+        // Uniforms for modulating layer opacity.
+        oneOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        twoOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        threeOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        fourOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        fiveOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        sixOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        sevenOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        eightOpacity: {
+            type: "1f",
+            values: 1/9
+        },
+
+        nineOpacity: {
+            type: "1f",
+            values: 1/9
+        }
     }
 });
