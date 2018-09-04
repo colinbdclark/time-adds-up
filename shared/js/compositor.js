@@ -9,6 +9,23 @@ fluid.defaults("timeAddsUp.compositor", {
 
     uniformModelMap: {},
 
+    layerSpecs: [],
+
+    dynamicComponents: {
+        layer: {
+            type: "timeAddsUp.layer",
+            sources: "{that}.options.layerSpecs",
+            options: {
+                targetModelPath: "{source}.targetModelPath",
+                url: "{source}.url",
+                textureNum: "{sourcePath}",
+                inTime: "{source}.clip.inTime",
+                outTime: "{source}.clip.outTime",
+                duration: "{source}.clip.duration"
+            }
+        }
+    },
+
     components: {
         enviro: {
             type: "flock.silentEnviro"

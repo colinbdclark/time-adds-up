@@ -1,6 +1,6 @@
 precision highp float;
 
-const int numLayers = 9;
+const int numLayers = 10;
 uniform sampler2D samplers[numLayers];
 uniform float opacities[numLayers];
 uniform vec2 textureSize;

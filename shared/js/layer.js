@@ -3,6 +3,7 @@ fluid.defaults("timeAddsUp.layer", {
 
     textureNum: 0,
 
+    // TODO: Rename this.
     targetModelPath: "opacity",
 
     bindToTextureUnit: {

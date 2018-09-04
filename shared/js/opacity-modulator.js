@@ -12,8 +12,8 @@ fluid.defaults("timeAddsUp.opacityModulator", {
     synthDef: {
         ugen: "flock.ugen.lfNoise",
         freq: 1/10,
-        mul: 1/12,
-        add: 1/18,
+        mul: 1/14,
+        add: 1/20,
         options: {
             interpolation: "linear"
         }

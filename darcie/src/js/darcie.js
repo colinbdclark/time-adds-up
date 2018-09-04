@@ -71,20 +71,6 @@ fluid.defaults("timeAddsUp.darcie.compositor", {
         }
     ],
 
-    dynamicComponents: {
-        layer: {
-            type: "timeAddsUp.layer",
-            sources: "{that}.options.layerSpecs",
-            options: {
-                url: "{source}.url",
-                textureNum: "{sourcePath}",
-                inTime: "{source}.clip.inTime",
-                outTime: "{source}.clip.outTime",
-                duration: "{source}.clip.duration"
-            }
-        }
-    },
-
     components: {
         glRenderer: {
             type: "timeAddsUp.darcie.glRenderer"

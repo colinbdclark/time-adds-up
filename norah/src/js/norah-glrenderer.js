@@ -10,13 +10,19 @@ fluid.defaults("timeAddsUp.norah.glRenderer", {
         samplers: {
             type: "1iv",
             values: [
-                [0, 1, 2, 3, 4, 5, 6, 7, 8]
+                // TODO: Generate this based on the compositor's
+                // number of layerSpecs.
+                [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
             ]
         },
 
         opacities: {
             type: "1fv",
-            values: [[1/9, 1/9, 1/9, 1/9, 1/9, 1/9, 1/9, 1/9, 1/9]]
+            values: [
+                // TODO: Generate this based on the compositor's
+                // number of layerSpecs.
+                [1/10, 1/10, 1/10, 1/10, 1/10, 1/10, 1/10, 1/10, 1/10, 1/10]
+            ]
         }
     }
 });
