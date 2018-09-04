@@ -13,7 +13,6 @@ fluid.defaults("timeAddsUp.norah.compositor", {
         opacities: "opacities"
     },
 
-    // TODO: ever heard of this thing called an array?
     model: {
         opacities: [
             "{glRenderer}.options.uniforms.opacities.values"
@@ -28,6 +27,7 @@ fluid.defaults("timeAddsUp.norah.compositor", {
         // Note: This redundancy is due to
         // problems with the use of dynamicComponents
         // when instantiating these layers.
+
         oneLayer: {
             type: "timeAddsUp.layer",
             options: {

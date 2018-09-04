@@ -14,6 +14,9 @@ fluid.defaults("timeAddsUp.layer", {
 
     model: {
         url: "{that}.options.url",
+        inTime: "{that}.options.inTime",
+        outTime: "{that}.options.outTime",
+        duration: "{that}.options.duration",
         loop: true,
         frameRate: 24
     },
