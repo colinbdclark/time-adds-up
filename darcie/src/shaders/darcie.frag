@@ -30,6 +30,6 @@ void main(void) {
         sum.rgb = sum.rgb + (frag.rgb / 12.0);
     }
 
-    vec4 contrasty = adjustBrightnessContrast(2.0, 0.9, 2.8, sum);
+    vec4 contrasty = adjustBrightnessContrast(2.0, 0.85, 2.7, sum);
     gl_FragColor = contrasty;
 }

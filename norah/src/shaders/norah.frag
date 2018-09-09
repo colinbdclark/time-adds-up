@@ -25,7 +25,7 @@ void main(void) {
         sum.rgb = sum.rgb + (frag.rgb * opacities[i]);
     }
 
-    vec4 contrasty = adjustBrightnessContrast(2.0, 0.7, 2.6, sum);
+    vec4 contrasty = adjustBrightnessContrast(1.9, 0.8, 2.8, sum);
 
     gl_FragColor = contrasty;
 }
