@@ -2,11 +2,7 @@ fluid.defaults("timeAddsUp.cookie.compositor", {
     gradeNames: "timeAddsUp.compositor",
 
     layerURLs: [
-        "videos/1080x720/1.m4v",
-        "videos/1080x720/2.m4v",
-        "videos/1080x720/3.m4v",
-        "videos/1080x720/4.m4v",
-        "videos/1080x720/5.m4v"
+        "videos/1080x720/1.m4v"
     ],
 
     layerSpecs: [
